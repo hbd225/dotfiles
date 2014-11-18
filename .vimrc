@@ -31,6 +31,7 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'vim-scripts/c.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neomru.vim'
+Bundle 'tomtom/tcomment_vim'
 
 syntax enable
 colorscheme codeschool
