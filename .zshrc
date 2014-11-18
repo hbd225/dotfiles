@@ -5,7 +5,6 @@ bindkey -v
 export ZSH=$HOME/.oh-my-zsh
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
-
 export COCOS_CONSOLE_ROOT=/Users/Apple/dev/ios/cocos2d-x-3.1.1/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$HOME/.rbenv/bin:$HOME/.rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
 
@@ -14,6 +13,7 @@ if [ -n "$TMUX" ]; then
   alias pbcopy="reattach-to-user-namespace pbcopy"
 fi
 
+alias v='vim'
 alias ll='ls -l'
 alias la='ls -a'
 alias g='git'
@@ -24,6 +24,7 @@ alias ts="tmux switch -t "
 alias gr="grep -R "
 alias be="bundle exec "
 alias tc="tmux save-buffer - | reattach-to-user-namespace pbcopy"
+alias github="cd ~/dev/github"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
