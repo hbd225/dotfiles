@@ -7,6 +7,7 @@ export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 export COCOS_CONSOLE_ROOT=/Users/Apple/dev/ios/cocos2d-x-3.1.1/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$HOME/.rbenv/bin:$HOME/.rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
+export PGDATA=/usr/local/var/postgres/data
 
 alias tmux="TERM=screen-256color-bce tmux"
 if [ -n "$TMUX" ]; then
@@ -25,6 +26,12 @@ alias gr="grep -R "
 alias be="bundle exec "
 alias tc="tmux save-buffer - | reattach-to-user-namespace pbcopy"
 alias github="cd ~/dev/github"
+alias s="bundle exec rails s"
+alias c="bundle exec rails c"
+#alias railsnew="ruby ~/github/rails/railties/bin/rails new --dev"
+alias railsnew="ruby ~/github/rails-dev-box/rails/railties/bin/rails new --dev"
+alias rbconfigure="../configure --prefix=$HOME/.rbenv/versions/trunk --with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"
+alias rbsh="rbenv shell"
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
