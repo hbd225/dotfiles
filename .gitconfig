@@ -4,7 +4,6 @@
 [color]
 	ui = auto
 [alias]
-	st = status
 	co = checkout
 	ci = commit
 	br = branch
@@ -13,5 +12,6 @@
 [core]
 	editor = /usr/bin/vim
 	precomposeunicode = true
+	quotepath = false
 [github]
 	user = hbd225
