@@ -5,5 +5,6 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.git-completion.sh ~/.git-completion.sh
+ln -s ~/dotfiles/.rainbarf.conf ~/.rainbarf.conf
 
 sh ~/dotfiles/.fzf/install

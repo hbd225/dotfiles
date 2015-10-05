@@ -74,7 +74,8 @@ endif
 
 " vim-rspec
 let mapleader = ","
-let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+"let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 noremap \  ,
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -89,3 +90,12 @@ augroup RSpec
   autocmd!
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
+
+" set textwidth=80
+" set colorcolumn=+1
+" hi ColorColumn guibg=#2d2d2d ctermbg=232
+
+" ctags
+map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg -languages=-javascript,sql<CR><CR>
+
+set tags+=.git/tags
