@@ -49,7 +49,8 @@ alias p='ps aux | grep'
 alias tf='tail -f'
 alias lh='ls -lh'
 alias sr='spring rspec'
-alias d='docker'
+alias dk='docker'
+alias dc='docker-compose'
 
 autoload bashcompinit
 bashcompinit

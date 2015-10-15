@@ -75,7 +75,7 @@ endif
 " vim-rspec
 let mapleader = ","
 "let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 noremap \  ,
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
