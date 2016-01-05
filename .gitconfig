@@ -13,5 +13,6 @@
 	editor = /usr/bin/vim
 	precomposeunicode = true
 	quotepath = false
+	excludesfile = /Users/dev/.gitignore_global
 [github]
 	user = hbd225

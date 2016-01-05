@@ -9,6 +9,7 @@ set noswapfile
 set nobackup
 set background=dark
 set backspace=indent,eol,start
+set fileencodings=utf-8,sjis,euc-jp,latin1
 
 nnoremap ff :FufFile **/
 nnoremap fb :FufBuffer
