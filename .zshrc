@@ -45,19 +45,44 @@ alias rbsh="rbenv shell"
 alias l='less'
 alias devrails='/Users/dev/github/rails-dev-box/rails/railties/exe/rails'
 alias dbundle='ruby -I ~/github/bundler/lib ~/github/bundler/exe/bundle'
-alias p='ps aux | grep'
+#alias p='ps aux | grep'
 alias tf='tail -f'
 alias lh='ls -lh'
 alias sr='spring rspec'
 alias dk='docker'
 alias dc='docker-compose'
+alias va='vagrant'
+alias p='peco'
+alias ps='ps aux'
+alias pspeco='ps | peco'
 
 autoload bashcompinit
 bashcompinit
-source ~/.git-completion.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# set docker configuration
-eval "$(docker-machine env default)"
+### peco
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+function agvim () {
+    vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+export NVM_DIR="/Users/dev/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

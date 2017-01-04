@@ -10,11 +10,17 @@ set nobackup
 set background=dark
 set backspace=indent,eol,start
 set fileencodings=utf-8,sjis,euc-jp,latin1
+set clipboard=unnamed
 
 nnoremap ff :FufFile **/
 nnoremap fb :FufBuffer
 nnoremap fr :FufRenewCache
 nnoremap ag :Ag 
+vnoremap * "zy:let @/ = @z<CR>n
+
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -40,6 +46,11 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'terryma/vim-expand-region'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -49,11 +60,13 @@ colorscheme codeschool
 filetype plugin indent on     " required!
 
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+au BufRead,BufNewFile,BufReadPre *.es6   set filetype=javascript
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 " unite.vim
 let g:unite_enable_start_insert=1
-noremap <C-P> :Unite buffer<CR>
+noremap <C-G> :Unite file_rec/git<CR>
+noremap <C-B> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-Z> :Unite file_mru<CR>
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
@@ -73,8 +86,8 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-" vim-rspec
-let mapleader = ","
+let mapleader = "\<Space>"
+"let mapleader = ","
 "let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 noremap \  ,
@@ -82,6 +95,13 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+nnoremap<Leader>w :w<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " vim-quickrun
 let g:quickrun_config = {}
@@ -98,5 +118,9 @@ augroup END
 
 " ctags
 map <Leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg -languages=-javascript,sql<CR><CR>
+
+" terryma/vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 set tags+=.git/tags
