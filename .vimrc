@@ -21,6 +21,10 @@ vnoremap * "zy:let @/ = @z<CR>n
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+imap <c-j> <esc>
+imap <c-b> <Left>
+imap <c-f> <Right>
+imap <c-h> <BackSpace>
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -51,6 +55,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'digitaltoad/vim-pug'
 
 call vundle#end()
 

@@ -83,6 +83,3 @@ bindkey '^r' peco-select-history
 function agvim () {
     vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
-
-export NVM_DIR="/Users/dev/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
