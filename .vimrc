@@ -56,6 +56,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/yajs.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'itmammoth/doorboy.vim'
 
 call vundle#end()
 
