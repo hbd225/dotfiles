@@ -27,9 +27,12 @@ brew cleanup
 # oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+# link
+./dotfilesLink.sh
+
 # vundle
 # need to launch vim and run :PluginInstall
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# link
-./dotfilesLink.sh
+# vimproc
+cd ~/.vim/bundle/vimproc.vim && make
