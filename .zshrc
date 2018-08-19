@@ -11,11 +11,10 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR=vim
 export RBENV_ROOT=/usr/local/var/rbenv
-export PATH=/usr/local/var/rbenv/bin:/usr/local/var/rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Applications/android-sdk-macosx/platform-tools:$HOME/.nodenv/shims:$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/.rbenv/shims:/usr/local/var/rbenv/bin:/usr/local/var/rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Applications/android-sdk-macosx/platform-tools:$HOME/.nodenv/shims:$GOPATH/bin:$GOROOT/bin:$PATH
 
 # tmp
 export PATH=/usr/local/opt/mysql@5.5/bin:$PATH
-export PBCD_EDITOR_INNER=//planbcd.dev:5254/javascripts/editor-inner.js
 
 alias tmux="TERM=screen-256color-bce tmux"
 if [ -n "$TMUX" ]; then

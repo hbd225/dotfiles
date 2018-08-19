@@ -16,3 +16,5 @@
 	excludesfile = /Users/dev/.gitignore_global
 [github]
 	user = hbd225
+[credential]
+	helper = osxkeychain

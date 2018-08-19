@@ -54,9 +54,13 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'itmammoth/doorboy.vim'
+Plugin 'prettier/vim-prettier'
+Plugin 'sbdchd/neoformat'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -68,6 +72,9 @@ filetype plugin indent on     " required!
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile,BufReadPre *.es6   set filetype=javascript
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 " unite.vim
 let g:unite_enable_start_insert=1
