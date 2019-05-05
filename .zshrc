@@ -1,4 +1,5 @@
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 
 bindkey -v
 
@@ -11,7 +12,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export BUNDLER_EDITOR=vim
 export RBENV_ROOT=/usr/local/var/rbenv
-export PATH=$HOME/.rbenv/shims:/usr/local/var/rbenv/bin:/usr/local/var/rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Applications/android-sdk-macosx/platform-tools:$HOME/.nodenv/shims:$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/.nodenv/shims:$HOME/.rbenv/shims:/usr/local/var/rbenv/bin:/usr/local/var/rbenv/shims:/usr/local/Cellar/httpd/2.2.26/sbin:/usr/local/Cellar/postgresql/9.2.4/bin:/usr/local/git/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin:/usr/bin:/usr/sbin:/bin:/sbin:/Applications/android-sdk-macosx/platform-tools:$HOME/.nodenv/shims:$GOPATH/bin:$GOROOT/bin:$PATH
 
 # tmp
 export PATH=/usr/local/opt/mysql@5.5/bin:$PATH
@@ -54,6 +55,7 @@ alias lh='ls -lh'
 alias sr='spring rspec'
 alias dk='docker'
 alias dc='docker-compose'
+alias de='docker-compose exec'
 alias va='vagrant'
 alias p='peco'
 alias ps='ps aux'
